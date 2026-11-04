@@ -86,5 +86,26 @@ while opcao != "4":
             print("Os jogadores alternam as jogadas.")
             print("Vence quem completar 3 símbolos iguais.")
             print("Se o tabuleiro encher, ocorre empate.")
-    
+     # REPETIÇÃO DAS JOGADAS
+            while venceu == False and empate == False:
+
+                # EXIBIÇÃO DO TABULEIRO 
+
+                print("\n    1   2   3")
+
+                for i in range(3):
+
+                    print(" ", i + 1, end=" ")
+
+                    for j in range(3):
+
+                        print(tabuleiro[i][j], end="")
+
+                        if j < 2:
+                            print(" | ", end="")
+
+                    print()
+
+                    if i < 2:
+                        print("   ---+---+---")
             
