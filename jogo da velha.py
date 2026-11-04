@@ -61,3 +61,30 @@ while opcao != "4":
             print("\nCampeonato iniciado!")
             print("Número máximo de partidas:", numero_partidas)
             print("Vitórias necessárias:", maioria)
+   # CONTROLE DAS PARTIDAS
+        partida_atual = 0
+
+        while partida_atual < numero_partidas and pontos_x < ((numero_partidas // 2) + 1) and pontos_o < ((numero_partidas // 2) + 1):
+
+            partida_atual = partida_atual + 1
+              # MATRIZ DO TABULEIRO
+            tabuleiro = [
+                [" ", " ", " "],
+                [" ", " ", " "],
+                [" ", " ", " "]
+            ]
+
+            jogador = "X"
+            venceu = False
+            empate = False
+
+            print("\n================================")
+            print("PARTIDA", partida_atual)
+            print("================================")
+
+            print("\nRegras:")
+            print("Os jogadores alternam as jogadas.")
+            print("Vence quem completar 3 símbolos iguais.")
+            print("Se o tabuleiro encher, ocorre empate.")
+    
+            
