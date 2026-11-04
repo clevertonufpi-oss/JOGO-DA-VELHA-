@@ -23,3 +23,41 @@ while opcao != "4":
     print("================================")
 
     opcao = input("Escolha uma opção: ")
+ # ======================================
+    # OPÇÃO 1 - PARTIDA INDIVIDUAL
+    # ======================================
+
+    if opcao == "1" or opcao == "2":
+
+        campeonato = False
+        numero_partidas = 1
+        pontos_x = 0
+        pontos_o = 0
+
+        if opcao == "2":
+
+            campeonato = True
+
+            print("\n===== CAMPEONATO =====")
+            print("1 - Melhor de 3")
+            print("2 - Melhor de 5")
+
+            escolha = ""
+
+            while escolha != "1" and escolha != "2":
+
+                escolha = input("Escolha o campeonato: ")
+
+                if escolha != "1" and escolha != "2":
+                    print("Opção inválida!")
+
+            if escolha == "1":
+                numero_partidas = 3
+            else:
+                numero_partidas = 5
+
+            maioria = (numero_partidas // 2) + 1
+
+            print("\nCampeonato iniciado!")
+            print("Número máximo de partidas:", numero_partidas)
+            print("Vitórias necessárias:", maioria)
