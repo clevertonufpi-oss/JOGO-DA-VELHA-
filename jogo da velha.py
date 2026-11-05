@@ -108,4 +108,8 @@ while opcao != "4":
 
                     if i < 2:
                         print("   ---+---+---")
+                     # IDENTIFICAÇÃO DO JOGADOR
+                print("\nVez do jogador:", jogador)
+
+                
             
