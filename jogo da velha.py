@@ -110,6 +110,42 @@ while opcao != "4":
                         print("   ---+---+---")
                      # IDENTIFICAÇÃO DO JOGADOR
                 print("\nVez do jogador:", jogador)
+# VALIDAÇÃO DA JOGADA
+                jogada_valida = False
+
+                while jogada_valida == False:
+
+                    # LEITURA DA LINHA
+                    linha_valida = False
+
+                    while linha_valida == False:
+
+                        entrada = input("Digite a linha (1 a 3): ")
+
+                        for n in range(1, 4):
+
+                            if entrada == str(n):
+                                linha = n - 1
+                                linha_valida = True
+
+                        if linha_valida == False:
+                            print("Linha inválida! Digite de 1 a 3.")
+
+                    # LEITURA DA COLUNA
+                    coluna_valida = False
+
+                    while coluna_valida == False:
+
+                        entrada = input("Digite a coluna (1 a 3): ")
+
+                        for n in range(1, 4):
+
+                            if entrada == str(n):
+                                coluna = n - 1
+                                coluna_valida = True
+
+                        if coluna_valida == False:
+                            print("Coluna inválida! Digite de 1 a 3.")
 
                 
             
