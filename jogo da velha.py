@@ -146,6 +146,16 @@ while opcao != "4":
 
                         if coluna_valida == False:
                             print("Coluna inválida! Digite de 1 a 3.")
+# VERIFICAÇÃO DA CASA
+                    if tabuleiro[linha][coluna] == " ":
+
+                        tabuleiro[linha][coluna] = jogador
+                        jogada_valida = True
+
+                    else:
+
+                        print("\nEssa casa já está ocupada!")
+                        print("Escolha outra posição.")
 
                 
             
