@@ -156,6 +156,45 @@ while opcao != "4":
 
                         print("\nEssa casa já está ocupada!")
                         print("Escolha outra posição.")
+# VERIFICAÇÃO DE VITÓRIA
+                venceu = False
+# VERIFICAÇÃO DE LINHAS
+                for i in range(3):
+                    
+                    if tabuleiro[i][0] == jogador and tabuleiro[i][1] == jogador and tabuleiro[i][2] == jogador:
 
-                
-            
+                        venceu = True
+#VERIFICAÇÃO DE COLUNAS
+                for j in range(3):
+
+                    if tabuleiro[0][j] == jogador and tabuleiro[1][j] == jogador and tabuleiro[2][j] == jogador:
+
+                        venceu = True
+#VERIFICAÇÃO DE DIAGONAIS
+                if tabuleiro[0][0] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][2] == jogador:
+
+                    venceu = True
+
+                if tabuleiro[0][2] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][0] == jogador:
+
+                    venceu = True
+#VERIFICAÇÃO DE EMPATE
+                casas_vazias = 0
+                for i in range(3):
+
+                    for j in range(3):
+
+                        if tabuleiro[i][j] == " ":
+
+                            casas_vazias = casas_vazias + 1
+
+                if casas_vazias == 0 and venceu == False:
+
+                    empate = True
+#RESULTADO DA JOGADA
+                if venceu == False and empate == False:
+
+                    if jogador == "X":
+                        jogador = "O"
+                    else:
+                        jogador = "X"
