@@ -23,7 +23,7 @@ while opcao != "4":
     print("================================")
 
     opcao = input("Escolha uma opção: ")
- # ======================================
+    # ======================================
     # OPÇÃO 1 - PARTIDA INDIVIDUAL
     # ======================================
 
@@ -61,13 +61,16 @@ while opcao != "4":
             print("\nCampeonato iniciado!")
             print("Número máximo de partidas:", numero_partidas)
             print("Vitórias necessárias:", maioria)
-   # CONTROLE DAS PARTIDAS
+            
+# CONTROLE DAS PARTIDAS
         partida_atual = 0
 
         while partida_atual < numero_partidas and pontos_x < ((numero_partidas // 2) + 1) and pontos_o < ((numero_partidas // 2) + 1):
 
             partida_atual = partida_atual + 1
-              # MATRIZ DO TABULEIRO
+
+# MATRIZ DO TABULEIRO
+
             tabuleiro = [
                 [" ", " ", " "],
                 [" ", " ", " "],
@@ -86,10 +89,10 @@ while opcao != "4":
             print("Os jogadores alternam as jogadas.")
             print("Vence quem completar 3 símbolos iguais.")
             print("Se o tabuleiro encher, ocorre empate.")
-     # REPETIÇÃO DAS JOGADAS
+# REPETIÇÃO DAS JOGADAS
             while venceu == False and empate == False:
 
-                # EXIBIÇÃO DO TABULEIRO 
+# EXIBIÇÃO DO TABULEIRO 
 
                 print("\n    1   2   3")
 
@@ -108,14 +111,14 @@ while opcao != "4":
 
                     if i < 2:
                         print("   ---+---+---")
-                     # IDENTIFICAÇÃO DO JOGADOR
+# IDENTIFICAÇÃO DO JOGADOR
                 print("\nVez do jogador:", jogador)
 # VALIDAÇÃO DA JOGADA
                 jogada_valida = False
 
                 while jogada_valida == False:
 
-                    # LEITURA DA LINHA
+# LEITURA DA LINHA
                     linha_valida = False
 
                     while linha_valida == False:
@@ -131,7 +134,7 @@ while opcao != "4":
                         if linha_valida == False:
                             print("Linha inválida! Digite de 1 a 3.")
 
-                    # LEITURA DA COLUNA
+# LEITURA DA COLUNA
                     coluna_valida = False
 
                     while coluna_valida == False:
