@@ -227,3 +227,42 @@ while opcao != "4":
             if i < 2:
                 print("  ---+---+---")
 
+#CONTABILIZAÇÃO DO RESULTADO
+
+            total_partidas = total_partidas + 1
+
+            if = venceu == True:
+
+            print("\nJOGADOR", jogador, "VENCEU!") 
+
+        if jogador == "X"
+
+            vitorias_x = vitorias_x + 1
+            pontos_x = pontos_x + 1
+
+            
+        else:
+
+            vitorias_o + vitorias_o + 1
+            pontos_o = pontos_o + 1
+
+        elif empate ==. True:
+
+            print("\nPARTIDA TERMINOU EM EMPATE!")
+
+            empates = empates + 1
+
+#PLACAR GERAL
+
+            print ("\n===== PLACAR GERAL ======")
+            print("Jogador X:", vitorias_x)
+            print("Jogador O:", vitorias_o)
+            print("Empates:", empates)
+            print("Total de partidas:", total_partidas)
+
+#PLACAR DO CAMPEONATO
+        if campeonato == True:
+            
+            print  ("\n===== PLACAR DO CAMPEONATO =====")
+            print("Vitorias de X:", vitorias_x)
+            print("Vitorias de O:", vitorias_o)
