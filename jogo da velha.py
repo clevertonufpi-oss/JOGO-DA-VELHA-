@@ -8,6 +8,7 @@ vitorias_x = 0
 vitorias_o = 0
 empates = 0
 total_partidas = 0
+
 # CONTROLE DO MENU
 opcao = ""
 
@@ -23,6 +24,7 @@ while opcao != "4":
     print("================================")
 
     opcao = input("Escolha uma opção: ")
+
     # ======================================
     # OPÇÃO 1 - PARTIDA INDIVIDUAL
     # ======================================
@@ -89,7 +91,9 @@ while opcao != "4":
             print("Os jogadores alternam as jogadas.")
             print("Vence quem completar 3 símbolos iguais.")
             print("Se o tabuleiro encher, ocorre empate.")
+            
 # REPETIÇÃO DAS JOGADAS
+
             while venceu == False and empate == False:
 
 # EXIBIÇÃO DO TABULEIRO 
@@ -111,14 +115,19 @@ while opcao != "4":
 
                     if i < 2:
                         print("   ---+---+---")
+
 # IDENTIFICAÇÃO DO JOGADOR
+
                 print("\nVez do jogador:", jogador)
+
 # VALIDAÇÃO DA JOGADA
+
                 jogada_valida = False
 
                 while jogada_valida == False:
 
 # LEITURA DA LINHA
+
                     linha_valida = False
 
                     while linha_valida == False:
@@ -135,6 +144,7 @@ while opcao != "4":
                             print("Linha inválida! Digite de 1 a 3.")
 
 # LEITURA DA COLUNA
+
                     coluna_valida = False
 
                     while coluna_valida == False:
@@ -149,7 +159,9 @@ while opcao != "4":
 
                         if coluna_valida == False:
                             print("Coluna inválida! Digite de 1 a 3.")
+
 # VERIFICAÇÃO DA CASA
+
                     if tabuleiro[linha][coluna] == " ":
 
                         tabuleiro[linha][coluna] = jogador
@@ -159,21 +171,29 @@ while opcao != "4":
 
                         print("\nEssa casa já está ocupada!")
                         print("Escolha outra posição.")
+
 # VERIFICAÇÃO DE VITÓRIA
+
                 venceu = False
+
 # VERIFICAÇÃO DE LINHAS
+
                 for i in range(3):
                     
                     if tabuleiro[i][0] == jogador and tabuleiro[i][1] == jogador and tabuleiro[i][2] == jogador:
 
                         venceu = True
-#VERIFICAÇÃO DE COLUNAS
+
+# VERIFICAÇÃO DE COLUNAS
+
                 for j in range(3):
 
                     if tabuleiro[0][j] == jogador and tabuleiro[1][j] == jogador and tabuleiro[2][j] == jogador:
 
                         venceu = True
-#VERIFICAÇÃO DE DIAGONAIS
+
+# VERIFICAÇÃO DE DIAGONAIS
+
                 if tabuleiro[0][0] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][2] == jogador:
 
                     venceu = True
@@ -181,7 +201,9 @@ while opcao != "4":
                 if tabuleiro[0][2] == jogador and tabuleiro[1][1] == jogador and tabuleiro[2][0] == jogador:
 
                     venceu = True
-#VERIFICAÇÃO DE EMPATE
+
+# VERIFICAÇÃO DE EMPATE
+
                 casas_vazias = 0
                 for i in range(3):
 
@@ -194,7 +216,9 @@ while opcao != "4":
                 if casas_vazias == 0 and venceu == False:
 
                     empate = True
-#RESULTADO DA JOGADA
+
+# RESULTADO DA JOGADA
+
                 if venceu == False and empate == False:
 
                     if jogador == "X":
@@ -202,11 +226,11 @@ while opcao != "4":
                     else:
                         jogador = "X"
 
-#EXIBIÇÃO DO TABULEIRO FINAL
+# EXIBIÇÃO DO TABULEIRO FINAL
 
-            print  ("\n========================================")
-            print  ("       TABULEIRO FINAL")
-            print  ("========================================")
+            print("\n========================================")
+            print("       TABULEIRO FINAL")
+            print("========================================")
 
             print("\n   1  2  3  ")
 
@@ -227,7 +251,7 @@ while opcao != "4":
             if i < 2:
                 print("  ---+---+---")
 
-#CONTABILIZAÇÃO DO RESULTADO
+# CONTABILIZAÇÃO DO RESULTADO
 
             total_partidas = total_partidas + 1
 
@@ -251,7 +275,7 @@ while opcao != "4":
 
         empates = empates + 1
 
-#PLACAR GERAL
+# PLACAR GERAL
 
         print ("\n===== PLACAR GERAL ======")
         print("Jogador X:", vitorias_x)
@@ -259,14 +283,16 @@ while opcao != "4":
         print("Empates:", empates)
         print("Total de partidas:", total_partidas)
 
-#PLACAR DO CAMPEONATO
+# PLACAR DO CAMPEONATO
+
         if campeonato == True:
             
             print  ("\n===== PLACAR DO CAMPEONATO =====")
             print("Vitorias de X:", vitorias_x)
             print("Vitorias de O:", vitorias_o)
 
-#RESULTADO FINAL DO CAMPEONATO
+# RESULTADO FINAL DO CAMPEONATO
+
             if campeonato == True:
 
                 print("\n========================================")
@@ -289,17 +315,41 @@ while opcao != "4":
             print("\nVITÓRIAS DO JOGADOR X:", pontos_x)
             print("VITÓRIAS DO JOGADOR O:", pontos_o)
 
-#VISUALIZAR PLACAR GERAL
-#
+# VISUALIZAR PLACAR GERAL
 
     elif opcao == "3":
         print("\n========================================")
         print("\n===== PLACAR GERAL ======")
         print("========================================")
-        
+
         print("Jogador X:", vitorias_x)
         print("Jogador O:", vitorias_o)
         print("Empates:", empates)
         print("Total de partidas:", total_partidas)
 
         print("=======================================")
+
+    elif opcao == "4":
+
+        print("\n========================================")
+        print("         ESTATÍSTICAS FINAIS")
+        print("========================================")
+
+        print("Total de partidas jogadas:", total_partidas)
+        print("Total de vitórias do Jogador X:", vitorias_x)
+        print("Total de vitórias do Jogador O:", vitorias_o)
+        print("Total de empates:", empates)
+
+        if total_partidas > 0:
+
+            porcentagem_x = (vitorias_x / total_partidas) * 100
+            porcentagem_o = (vitorias_o / total_partidas) * 100
+
+            print("Percentual de vitórias do Jogador X:", round(porcentagem_x, 1), "%")
+            print("Percentual de vitórias do Jogador O:", round(porcentagem_o, 1), "%")
+
+        print("\nObrigado por jogar!")
+        print("Jogo encerrado.")
+
+    else:
+        print("Opção inválida! Digite um número de 1 a 4.")
