@@ -265,3 +265,41 @@ while opcao != "4":
             print  ("\n===== PLACAR DO CAMPEONATO =====")
             print("Vitorias de X:", vitorias_x)
             print("Vitorias de O:", vitorias_o)
+
+#RESULTADO FINAL DO CAMPEONATO
+            if campeonato == True:
+
+                print("\n========================================")
+                print("       RESULTADO FINAL DO CAMPEONATO")
+                print("========================================")  
+
+            if pontos_x >= maioria:
+
+                print("\nCAMPEÃO: JOGADOR X!") 
+
+            elif pontos_o >= maioria:
+
+                print("\nCAMPEÃO: JOGADOR O!")
+
+            else:
+
+                print("\nCAMPEONATO ENCERRADO SEM CAMPEÃO!")
+                print("NÃO HOUVE VITÓRIAS SUFICIENTES PARA DECLARAR UM CAMPEÃO!")
+
+            print("\nVITÓRIAS DO JOGADOR X:", pontos_x)
+            print("VITÓRIAS DO JOGADOR O:", pontos_o)
+
+#VISUALIZAR PLACAR GERAL
+#
+
+    elif opcao == "3":
+        print("\n========================================")
+        print("\n===== PLACAR GERAL ======")
+        print("========================================")
+        
+        print("Jogador X:", vitorias_x)
+        print("Jogador O:", vitorias_o)
+        print("Empates:", empates)
+        print("Total de partidas:", total_partidas)
+
+        print("=======================================")
