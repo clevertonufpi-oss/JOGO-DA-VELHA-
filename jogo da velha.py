@@ -244,7 +244,7 @@ while opcao != "4":
 
                     if j < 2:
 
-                        print(" | ", end="")
+                        print(" | ", end=" ")
 
             print()
 
@@ -255,25 +255,24 @@ while opcao != "4":
 
             total_partidas = total_partidas + 1
 
-            if  venceu == True:
-                print("\nJOGADOR", jogador, "VENCEU!") 
+        if  venceu == True:
 
-        if jogador == "X":
+            print("\nJOGADOR", jogador, "VENCEU!") 
 
-            vitorias_x = vitorias_x + 1
-            pontos_x = pontos_x + 1
+            if jogador == "X":
 
-            
-        else:
+                vitorias_x = vitorias_x + 1
+                pontos_x = pontos_x + 1
 
-            vitorias_o = vitorias_o + 1
-            pontos_o = pontos_o + 1
+            elif jogador == "O":
 
-    elif empate == True:
+                vitorias_o = vitorias_o + 1
+                pontos_o = pontos_o + 1
 
-        print("\nPARTIDA TERMINOU EM EMPATE!")
+        elif empate == True:
 
-        empates = empates + 1
+            print("\nPARTIDA TERMINOU EM EMPATE!")
+            empates = empates + 1
 
 # PLACAR GERAL
 
