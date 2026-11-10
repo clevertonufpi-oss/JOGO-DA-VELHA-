@@ -26,7 +26,7 @@ while opcao != "4":
     opcao = input("Escolha uma opção: ")
 
     # ======================================
-    # OPÇÃO 1 - PARTIDA INDIVIDUAL
+    # OPÇÕES 1 E 2 - PARTIDA OU CAMPEONATO
     # ======================================
 
     if opcao == "1" or opcao == "2":
@@ -58,16 +58,16 @@ while opcao != "4":
             else:
                 numero_partidas = 5
 
-            maioria = (numero_partidas // 2) + 1
-
             print("\nCampeonato iniciado!")
             print("Número máximo de partidas:", numero_partidas)
-            print("Vitórias necessárias:", maioria)
+            print("Vitórias necessárias:", (numero_partidas // 2) + 1)
             
 # CONTROLE DAS PARTIDAS
         partida_atual = 0
 
-        while partida_atual < numero_partidas and pontos_x < ((numero_partidas // 2) + 1) and pontos_o < ((numero_partidas // 2) + 1):
+        maioria = (numero_partidas // 2) + 1
+
+        while partida_atual < numero_partidas and pontos_x < maioria and pontos_o < maioria:
 
             partida_atual = partida_atual + 1
 
@@ -232,71 +232,70 @@ while opcao != "4":
             print("       TABULEIRO FINAL")
             print("========================================")
 
-            print("\n   1  2  3  ")
+            print("\n    1   2   3")
 
             for i in range(3):
 
-                print(" ",i + 1, end=" ")
+                print(" ", i + 1, end=" ")
 
                 for j in range(3):
 
-                    print(tabuleiro[i][j], end=" ")
+                    print(tabuleiro[i][j], end="")
 
                     if j < 2:
+                        print(" | ", end="")
 
-                        print(" | ", end=" ")
+                print()
 
-            print()
-
-            if i < 2:
-                print("  ---+---+---")
+                if i < 2:
+                    print("   ---+---+---")
 
 # CONTABILIZAÇÃO DO RESULTADO
 
             total_partidas = total_partidas + 1
 
-        if  venceu == True:
+            if venceu == True:
 
-            print("\nJOGADOR", jogador, "VENCEU!") 
+                print("\nJOGADOR", jogador, "VENCEU!")
 
-            if jogador == "X":
+                if jogador == "X":
 
-                vitorias_x = vitorias_x + 1
-                pontos_x = pontos_x + 1
+                    vitorias_x = vitorias_x + 1
+                    pontos_x = pontos_x + 1
 
-            elif jogador == "O":
+                else:
 
-                vitorias_o = vitorias_o + 1
-                pontos_o = pontos_o + 1
+                    vitorias_o = vitorias_o + 1
+                    pontos_o = pontos_o + 1
 
-        elif empate == True:
+            elif empate == True:
 
-            print("\nPARTIDA TERMINOU EM EMPATE!")
-            empates = empates + 1
+                print("\nPARTIDA TERMINOU EM EMPATE!")
+                empates = empates + 1
 
 # PLACAR GERAL
 
-        print ("\n===== PLACAR GERAL ======")
-        print("Jogador X:", vitorias_x)
-        print("Jogador O:", vitorias_o)
-        print("Empates:", empates)
-        print("Total de partidas:", total_partidas)
+            print("\n===== PLACAR GERAL ======")
+            print("Jogador X:", vitorias_x)
+            print("Jogador O:", vitorias_o)
+            print("Empates:", empates)
+            print("Total de partidas:", total_partidas)
 
 # PLACAR DO CAMPEONATO
 
-        if campeonato == True:
-            
-            print  ("\n===== PLACAR DO CAMPEONATO =====")
-            print("Vitorias de X:", vitorias_x)
-            print("Vitorias de O:", vitorias_o)
+            if campeonato == True:
+
+                print("\n===== PLACAR DO CAMPEONATO =====")
+                print("Vitórias de X:", pontos_x)
+                print("Vitórias de O:", pontos_o)
 
 # RESULTADO FINAL DO CAMPEONATO
 
-            if campeonato == True:
+        if campeonato == True:
 
-                print("\n========================================")
-                print("       RESULTADO FINAL DO CAMPEONATO")
-                print("========================================")  
+            print("\n========================================")
+            print("       RESULTADO FINAL DO CAMPEONATO")
+            print("========================================")
 
             if pontos_x >= maioria:
 
@@ -318,7 +317,7 @@ while opcao != "4":
 
     elif opcao == "3":
         print("\n========================================")
-        print("\n===== PLACAR GERAL ======")
+        print("             PLACAR GERAL")
         print("========================================")
 
         print("Jogador X:", vitorias_x)
